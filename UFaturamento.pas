@@ -1,0 +1,118 @@
+unit UFaturamento;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UDM, TelaBase, Data.DB, System.ImageList,
+  Vcl.ImgList, Vcl.Grids, Vcl.DBGrids, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ToolWin,
+  Vcl.ExtCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Buttons, Vcl.Menus;
+
+type
+  TfFaturamento = class(TfTelaBase)
+    Label2: TLabel;
+    DBEdit1: TDBEdit;
+    Label3: TLabel;
+    Label4: TLabel;
+    DBEdit3: TDBEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
+    GroupBox2: TGroupBox;
+    DBGrid1: TDBGrid;
+    DBLookupComboBox2: TDBLookupComboBox;
+    Label5: TLabel;
+    edValor: TLabeledEdit;
+    edTotal: TLabeledEdit;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    procedure FormShow(Sender: TObject);
+    procedure btEditarClick(Sender: TObject);
+    procedure btNovoClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fFaturamento: TfFaturamento;
+
+implementation
+
+{$R *.dfm}
+procedure TfFaturamento.btEditarClick(Sender: TObject);
+begin
+  inherited;
+  DBLookupComboBox1.Enabled := false;
+  DM.MProdutoFat.Close;
+  DM.MProdutoFat.Open;
+end;
+
+procedure TfFaturamento.btNovoClick(Sender: TObject);
+begin
+  inherited;
+  DBLookupComboBox1.Enabled := true;
+  DBEdit3.Text  := DateToStr(Date());
+end;
+
+
+procedure TfFaturamento.FormShow(Sender: TObject);
+begin
+  inherited;
+  DM.MFaturamento.Open;
+
+  DM.MClienteFat.Open;
+
+end;
+
+procedure TfFaturamento.SpeedButton1Click(Sender: TObject);
+var
+qtaEstoque, idProduto, idItem, idVenda: integer;
+
+begin
+  inherited;
+  if (DM.MFaturamentoidFaturamento.AsInteger > 0 ) then
+  begin
+    idVenda := StrToInt(DBLookupComboBox2.KeyValue);
+    DM.MProdutoFat.First;
+    while not DM.MProdutoFat.eof do
+    begin
+       if (DM.MProdutoFatidVenda.AsInteger = idVenda) then
+       begin
+          if(DM.MProdutoFatqtdeEstoque.AsInteger > DM.MProdutoFatquantida.AsInteger) then
+          begin
+            // dando baixa na quantidade estoque
+            idProduto := DM.MProdutoFatidProduto.AsInteger;
+            idItem    := DM.MProdutoFatidPedido.AsInteger;
+            qtaEstoque  := DM.MProdutoFatqtdeEstoque.AsInteger - DM.MProdutoFatquantida.AsInteger;
+            DM.QAux.Close;
+            DM.QAux.SQL.Text := 'update produto set qtdeEstoque = '+ IntToStr(qtaEstoque)  + ' where idProduto = ' +  IntToStr(DM.MProdutoFatidProduto.AsInteger);
+            DM.QAux.ExecSQL;
+          end
+          else
+          begin
+            //se nao possuir quantidade suficiente
+            ShowMessage('Quantidade de produtos indisponível, a quantidade em estoque é = ' + DM.MProdutoqtdeEstoque.AsString);
+            abort
+          end;
+       end;
+       DM.MProdutoFat.Next;
+    end;
+
+    DM.MFaturamento_Item.Append;
+    DM.MFaturamento_itemidFaturamento.AsInteger := DM.MFaturamentoidFaturamento.AsInteger ;
+    DM.MFaturamento_itemidProduto.AsInteger := idProduto;
+    DM.MFaturamento_itemidPedido.AsInteger  := idItem;
+    DM.MFaturamento_item.Post;
+
+
+   end;
+  end;
+
+Initialization
+    RegisterClass(TfFaturamento);
+
+Finalization
+    RegisterClass(TfFaturamento);
+end.

@@ -1,0 +1,79 @@
+object fEstoque: TfEstoque
+  Left = 0
+  Top = 0
+  Caption = 'Estoque'
+  ClientHeight = 152
+  ClientWidth = 385
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 385
+    Height = 57
+    Align = alTop
+    Caption = 'Entrada de Estoque - C'#243'd. de barras'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    ExplicitWidth = 432
+  end
+  object GroupBox1: TGroupBox
+    Left = 0
+    Top = 57
+    Width = 385
+    Height = 95
+    Align = alClient
+    Caption = 'Dados'
+    TabOrder = 1
+    ExplicitHeight = 96
+    object edCodigo: TLabeledEdit
+      Left = 95
+      Top = 32
+      Width = 274
+      Height = 21
+      EditLabel.Width = 139
+      EditLabel.Height = 19
+      EditLabel.Caption = 'C'#243'digo de Barras'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -16
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = [fsBold]
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      MaxLength = 100
+      ParentFont = False
+      TabOrder = 0
+      OnKeyPress = edCodigoKeyPress
+    end
+    object edQuantidade: TLabeledEdit
+      Left = 16
+      Top = 32
+      Width = 57
+      Height = 21
+      EditLabel.Width = 56
+      EditLabel.Height = 13
+      EditLabel.Caption = 'Quantidade'
+      TabOrder = 1
+      Text = '1'
+    end
+  end
+end

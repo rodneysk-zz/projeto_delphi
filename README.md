@@ -15,7 +15,7 @@
 
 ### Autor
 
-<a><b>Rodney S. Kuster</b></a> <a href="https://blog.rocketseat.com.br/author/thiago//" title="Rocketseat">🚀</a>
+<a><b>Rodney S. Kuster</b></a> <a href="https://web.digitalinnovation.one/users/rodneysk?tab=achievements" title="Digital Innovation One">🚀</a>
 
 Entre em contato!
 

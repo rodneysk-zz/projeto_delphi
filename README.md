@@ -15,7 +15,7 @@
 
 ### Autor
 
-<a><b>Rodney S. Kuster</b></a> <a href="https://web.digitalinnovation.one/users/rodneysk?tab=achievements" title="Digital Innovation One">🚀</a>
+<a><b>Rodney S. Kuster</b></a> <a>🚀</a>
 
 Entre em contato!
 

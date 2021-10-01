@@ -1,7 +1,7 @@
 # Projeto em Delphi
 
 ## Descrição do Projeto
-<p align="center">Projeto feito em Delphi para a disciplina Laboratório de Software no Instituto Federal de Educação, Ciência e Tecnologia do Espírito Santo.</p>
+<p>Projeto feito em Delphi para a disciplina Laboratório de Software no Instituto Federal de Educação, Ciência e Tecnologia do Espírito Santo.</p>
 
 ### Features
 
@@ -21,5 +21,5 @@
 
 Entre em contato!
 
-[![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/tgmarinho/) 
-[![Gmail Badge](https://img.shields.io/badge/-tgmarinho@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:tgmarinho@gmail.com)
+[![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rodney-schultz-kuster/)](https://www.linkedin.com/in/rodney-schultz-kuster/) 
+[![Gmail Badge](https://img.shields.io/badge/-rodneysk25@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:rodneysk25@gmail.com)](mailto:rodneysk25@gmail.com)

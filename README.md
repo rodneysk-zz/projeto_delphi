@@ -14,7 +14,6 @@
 - [x] CRUD de controle de acesso
 
 ### Autor
----
 
 <a><b>Rodney S. Kuster</b></a> <a href="https://blog.rocketseat.com.br/author/thiago//" title="Rocketseat">🚀</a>
 
